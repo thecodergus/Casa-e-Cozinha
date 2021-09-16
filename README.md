@@ -6,7 +6,12 @@ Em /_bd/ se encontra o banco de dados
 
 Software construido com base em:
 - PHP 7.2
-- MySQL
+- MySQL 5.7.35
 - HTML 5
 - Javascript
 - CSS
+
+Para montar o ambiente via docker:
+```
+docker-compose up -d
+```

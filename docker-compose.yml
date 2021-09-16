@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+  app:
+    image: php:7.2-apache
+    restart: always
+    networks: 
+      - rede
+    ports: 
+      - "80:80"
+    volumes: 
+      - ./app:/var/www/html
+    depends_on: 
+      - database
+  
+  database:
+    image: mysql:5.7.35
+    volumes: 
+      - database_data:/var/lib/mysql
+      - ./_bd/ccabd_preechido.sql:/docker-entrypoint-initdb.d/dump.sql
+    restart: always
+    networks:
+      - rede
+    environment: 
+      # MYSQL_DATABASE: "ccabd"
+      MYSQL_ROOT_PASSWORD: "root"
+      # MYSQL_USER="devellop"
+      # MYSQL_PASSWORD="devellop"
+  phpmyadmin:
+    image: phpmyadmin:5
+    restart: always
+    ports: 
+      - "8080:80"
+    networks: 
+      - rede
+    environment: 
+      PMA_HOST: database
+      PMA_PORT: 3306
+      MYSQL_USER: "root"
+      MYSQL_PASSWORD: "root"
+    depends_on: 
+      - database
+
+volumes: 
+  database_data:
+
+networks: 
+  rede:

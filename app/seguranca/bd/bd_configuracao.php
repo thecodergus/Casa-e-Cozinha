@@ -1,5 +1,5 @@
 <?php
-$servidor = "127.0.0.1";
+$servidor = "database";
 $usuario = "root";
 $senha = "root";
 $banco = "ccabd";

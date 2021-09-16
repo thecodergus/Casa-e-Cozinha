@@ -2,7 +2,6 @@ version: "3.8"
 
 services:
   app:
-    # image: php:7.2-apache
     build: 
       context: ./
       dockerfile: ./builds/php-apache.Dockerfile
@@ -13,7 +12,6 @@ services:
       - "80:80"
     volumes: 
       - ./app:/var/www/html
-      # - ./config/php.ini:/usr/local/etc/php/php.ini-production
     depends_on: 
       - database
   
@@ -26,10 +24,8 @@ services:
     networks:
       - rede
     environment: 
-      # MYSQL_DATABASE: "ccabd"
       MYSQL_ROOT_PASSWORD: "root"
-      # MYSQL_USER="devellop"
-      # MYSQL_PASSWORD="devellop"
+      MYSQL_DATABASE: "ccabd" 
   phpmyadmin:
     image: phpmyadmin:5
     restart: always

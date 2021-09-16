@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 01/12/2016 às 18:59
--- Versão do servidor: 5.7.11-log
--- Versão do PHP: 5.6.15
+-- Host: database:3306
+-- Tempo de geração: 16-Set-2021 às 22:43
+-- Versão do servidor: 5.7.35
+-- versão do PHP: 7.4.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,13 +20,11 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `ccabd`
 --
-CREATE DATABASE IF NOT EXISTS `ccabd` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `ccabd`;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `agendamentos`
+-- Estrutura da tabela `agendamentos`
 --
 
 CREATE TABLE `agendamentos` (
@@ -39,7 +38,7 @@ CREATE TABLE `agendamentos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabela que armazena os agendamentos referentes a cada projeto de cada cliente.';
 
 --
--- Fazendo dump de dados para tabela `agendamentos`
+-- Extraindo dados da tabela `agendamentos`
 --
 
 INSERT INTO `agendamentos` (`id`, `projetos_id`, `tipo`, `status`, `data_marcada`, `horario`, `data_criada`) VALUES
@@ -69,7 +68,7 @@ INSERT INTO `agendamentos` (`id`, `projetos_id`, `tipo`, `status`, `data_marcada
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `ambientes`
+-- Estrutura da tabela `ambientes`
 --
 
 CREATE TABLE `ambientes` (
@@ -78,7 +77,7 @@ CREATE TABLE `ambientes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabela armazena os ambientes que são afetados pelo projetos.';
 
 --
--- Fazendo dump de dados para tabela `ambientes`
+-- Extraindo dados da tabela `ambientes`
 --
 
 INSERT INTO `ambientes` (`id`, `nome`) VALUES
@@ -91,7 +90,7 @@ INSERT INTO `ambientes` (`id`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `arquivos`
+-- Estrutura da tabela `arquivos`
 --
 
 CREATE TABLE `arquivos` (
@@ -103,7 +102,7 @@ CREATE TABLE `arquivos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabela que armazena o nome e caminho do arquivos do projeto, que forem feitos upload.';
 
 --
--- Fazendo dump de dados para tabela `arquivos`
+-- Extraindo dados da tabela `arquivos`
 --
 
 INSERT INTO `arquivos` (`id`, `projetos_id`, `nome`, `caminho`, `data`) VALUES
@@ -114,7 +113,7 @@ INSERT INTO `arquivos` (`id`, `projetos_id`, `nome`, `caminho`, `data`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `clientes`
+-- Estrutura da tabela `clientes`
 --
 
 CREATE TABLE `clientes` (
@@ -132,7 +131,7 @@ CREATE TABLE `clientes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabela que armazena os clientes registrados do software.';
 
 --
--- Fazendo dump de dados para tabela `clientes`
+-- Extraindo dados da tabela `clientes`
 --
 
 INSERT INTO `clientes` (`id`, `nome`, `telefone`, `cpf`, `rg`, `email`, `cidade`, `bairro`, `logradouro`, `numero`, `complemento`) VALUES
@@ -150,7 +149,7 @@ INSERT INTO `clientes` (`id`, `nome`, `telefone`, `cpf`, `rg`, `email`, `cidade`
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `funcionarios`
+-- Estrutura da tabela `funcionarios`
 --
 
 CREATE TABLE `funcionarios` (
@@ -162,7 +161,7 @@ CREATE TABLE `funcionarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabela que armazena os funcionários que são registrados no software.';
 
 --
--- Fazendo dump de dados para tabela `funcionarios`
+-- Extraindo dados da tabela `funcionarios`
 --
 
 INSERT INTO `funcionarios` (`id`, `usuarios_id`, `nome`, `telefone`, `email`) VALUES
@@ -170,12 +169,13 @@ INSERT INTO `funcionarios` (`id`, `usuarios_id`, `nome`, `telefone`, `email`) VA
 (03, 03, 'Gustavo Habitzreiter', 666666666666, 'gugahabitz@gmail.com'),
 (04, 04, 'Guilherme Foster', 666666666666, 'guilhermefoster50@gmail.com'),
 (05, 05, 'Gustavo M de Camargo', 99962166025, 'guga.power@hotmail.com'),
-(06, 06, 'Cradiu', 47997849784, 'cradiu@gmail.com');
+(06, 06, 'Cradiu', 47997849784, 'cradiu@gmail.com'),
+(07, 07, 'Gustavo Michels de Camargo', 554899216601, 'gustavo.michels.camargo@gmail.com');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `projetos`
+-- Estrutura da tabela `projetos`
 --
 
 CREATE TABLE `projetos` (
@@ -194,7 +194,7 @@ CREATE TABLE `projetos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabela que armazena os projetos registrados no software.';
 
 --
--- Fazendo dump de dados para tabela `projetos`
+-- Extraindo dados da tabela `projetos`
 --
 
 INSERT INTO `projetos` (`id`, `funcionarios_id`, `clientes_id`, `status`, `titulo`, `bairro`, `logradouro`, `numero`, `complemento`, `cidade`, `descricao`, `valor`) VALUES
@@ -210,7 +210,7 @@ INSERT INTO `projetos` (`id`, `funcionarios_id`, `clientes_id`, `status`, `titul
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `projetos_tem_ambientes`
+-- Estrutura da tabela `projetos_tem_ambientes`
 --
 
 CREATE TABLE `projetos_tem_ambientes` (
@@ -220,7 +220,7 @@ CREATE TABLE `projetos_tem_ambientes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabela armazena descrição e tambem os ids de projetos e ambientes.';
 
 --
--- Fazendo dump de dados para tabela `projetos_tem_ambientes`
+-- Extraindo dados da tabela `projetos_tem_ambientes`
 --
 
 INSERT INTO `projetos_tem_ambientes` (`ambientes_id`, `projetos_id`, `descricao`) VALUES
@@ -232,7 +232,7 @@ INSERT INTO `projetos_tem_ambientes` (`ambientes_id`, `projetos_id`, `descricao`
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuarios`
+-- Estrutura da tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -242,7 +242,7 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabela que armazena os usuários que são registrados no software.';
 
 --
--- Fazendo dump de dados para tabela `usuarios`
+-- Extraindo dados da tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `senha`) VALUES
@@ -250,47 +250,48 @@ INSERT INTO `usuarios` (`id`, `usuario`, `senha`) VALUES
 (03, 'gustavo_habitz', '83285e9ab4eb7ecf7b7bd78b94eb5b95'),
 (04, 'Foster', '633e8989ab479790984e3575fadf3f08'),
 (05, 'xxtituxx', '540d82b94efffecdd027f195e250d98e'),
-(06, 'cradiu', '3acaf10ecc3ac5cd96f12c60487194d8');
+(06, 'cradiu', '3acaf10ecc3ac5cd96f12c60487194d8'),
+(07, 'admin', '5886cbd8132c12ea27d688f3292a5721');
 
 --
--- Índices de tabelas apagadas
+-- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `agendamentos`
+-- Índices para tabela `agendamentos`
 --
 ALTER TABLE `agendamentos`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_agendamentos_projetos1_idx` (`projetos_id`);
 
 --
--- Índices de tabela `ambientes`
+-- Índices para tabela `ambientes`
 --
 ALTER TABLE `ambientes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `arquivos`
+-- Índices para tabela `arquivos`
 --
 ALTER TABLE `arquivos`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_arquivos_projetos1_idx` (`projetos_id`);
 
 --
--- Índices de tabela `clientes`
+-- Índices para tabela `clientes`
 --
 ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `funcionarios`
+-- Índices para tabela `funcionarios`
 --
 ALTER TABLE `funcionarios`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_funcionarios_usuarios1_idx` (`usuarios_id`);
 
 --
--- Índices de tabela `projetos`
+-- Índices para tabela `projetos`
 --
 ALTER TABLE `projetos`
   ADD PRIMARY KEY (`id`),
@@ -298,20 +299,20 @@ ALTER TABLE `projetos`
   ADD KEY `fk_projetos_clientes1_idx` (`clientes_id`);
 
 --
--- Índices de tabela `projetos_tem_ambientes`
+-- Índices para tabela `projetos_tem_ambientes`
 --
 ALTER TABLE `projetos_tem_ambientes`
   ADD KEY `fk_projetos_ambientes_ambientes1_idx` (`ambientes_id`),
   ADD KEY `fk_projetos_ambientes_projetos1_idx` (`projetos_id`);
 
 --
--- Índices de tabela `usuarios`
+-- Índices para tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas apagadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
@@ -319,71 +320,79 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `agendamentos`
   MODIFY `id` int(6) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT COMMENT 'Código do agendamento', AUTO_INCREMENT=32;
+
 --
 -- AUTO_INCREMENT de tabela `ambientes`
 --
 ALTER TABLE `ambientes`
   MODIFY `id` tinyint(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT COMMENT 'Código de identificação do ambiente.', AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT de tabela `arquivos`
 --
 ALTER TABLE `arquivos`
   MODIFY `id` int(6) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT COMMENT 'Código do arquivo', AUTO_INCREMENT=10;
+
 --
 -- AUTO_INCREMENT de tabela `clientes`
 --
 ALTER TABLE `clientes`
   MODIFY `id` tinyint(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT COMMENT 'Código de identificação do cliente.', AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT de tabela `funcionarios`
 --
 ALTER TABLE `funcionarios`
-  MODIFY `id` tinyint(2) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT COMMENT 'Código de identificação do funcionário.', AUTO_INCREMENT=7;
+  MODIFY `id` tinyint(2) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT COMMENT 'Código de identificação do funcionário.', AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT de tabela `projetos`
 --
 ALTER TABLE `projetos`
   MODIFY `id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT COMMENT 'Codigo de identificação de projetos.', AUTO_INCREMENT=19;
+
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` tinyint(2) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT COMMENT 'Código de identificação do usuário.', AUTO_INCREMENT=7;
+  MODIFY `id` tinyint(2) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT COMMENT 'Código de identificação do usuário.', AUTO_INCREMENT=8;
+
 --
--- Restrições para dumps de tabelas
+-- Restrições para despejos de tabelas
 --
 
 --
--- Restrições para tabelas `agendamentos`
+-- Limitadores para a tabela `agendamentos`
 --
 ALTER TABLE `agendamentos`
   ADD CONSTRAINT `fk_agendamentos_projetos1` FOREIGN KEY (`projetos_id`) REFERENCES `projetos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `arquivos`
+-- Limitadores para a tabela `arquivos`
 --
 ALTER TABLE `arquivos`
   ADD CONSTRAINT `fk_arquivos_projetos1` FOREIGN KEY (`projetos_id`) REFERENCES `projetos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `funcionarios`
+-- Limitadores para a tabela `funcionarios`
 --
 ALTER TABLE `funcionarios`
   ADD CONSTRAINT `fk_funcionarios_usuarios1` FOREIGN KEY (`usuarios_id`) REFERENCES `usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `projetos`
+-- Limitadores para a tabela `projetos`
 --
 ALTER TABLE `projetos`
   ADD CONSTRAINT `fk_projetos_clientes1` FOREIGN KEY (`clientes_id`) REFERENCES `clientes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_projetos_funcionarios1` FOREIGN KEY (`funcionarios_id`) REFERENCES `funcionarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `projetos_tem_ambientes`
+-- Limitadores para a tabela `projetos_tem_ambientes`
 --
 ALTER TABLE `projetos_tem_ambientes`
   ADD CONSTRAINT `fk_projetos_ambientes_ambientes1` FOREIGN KEY (`ambientes_id`) REFERENCES `ambientes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_projetos_ambientes_projetos1` FOREIGN KEY (`projetos_id`) REFERENCES `projetos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

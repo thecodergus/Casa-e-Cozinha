@@ -11,7 +11,11 @@ Software construido com base em:
 - Javascript
 - CSS
 
-Para montar o ambiente via docker:
+## Para montar o ambiente via docker:
 ```
 docker-compose up -d
 ```
+
+## Login:
+Usuario: admin
+Senha: admin

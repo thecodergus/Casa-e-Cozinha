@@ -1,6 +1,3 @@
-<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-<link rel="stylesheet" href="../../layout/css/css_estilo.css">
-<meta charset="utf8">
 <?php
 include "../bd/bd_conexao.php";
 $p_nome = $_POST['txtusuario'];
@@ -40,6 +37,10 @@ $p_senha = $_POST['pwdsenha'];
         }
 
 ?>
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" href="../../layout/css/css_estilo.css">
+<meta charset="utf8">
+
 <html class="pag-validacao-logi ">
   <div class="validacao-login define-fontes-login">
     <h2><?php echo $mensagem?></h2>

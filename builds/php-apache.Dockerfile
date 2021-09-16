@@ -13,6 +13,9 @@ FROM php:7.2-apache
 #     gzip \
 #     iputils-ping
 
+RUN apt-get update && \
+    apt-get install -y nano
+
 # RUN pecl install mcrypt-1.0.1 && docker-php-ext-enable mcrypt
 # RUN docker-php-ext-install soap gd mysqli pdo pdo_mysql zip
 RUN docker-php-ext-install mysqli pdo pdo_mysql

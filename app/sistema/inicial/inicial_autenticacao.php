@@ -1,6 +1,6 @@
 <?php
-include "adicionais\php\php_repositoriodemensagens.php";
-include "adicionais\php\php_repositoriodevalidacoes.php";
+include "adicionais/php/php_repositoriodemensagens.php";
+include "adicionais/php/php_repositoriodevalidacoes.php";
 ?>
 <!DOCTYPE html>
   <html class="pag-login">

@@ -1,10 +1,10 @@
 <?php
-include "seguranca\bd\bd_conexao.php";
+include "seguranca/bd/bd_conexao.php";
 include "adicionais/php/php_operacoesbd.php";
 include "adicionais/php/php_conversaodata.php";
-include "adicionais\php\php_conversaostatus.php";
-include "adicionais\php\php_repositoriodemensagens.php";
-include "adicionais\php\php_repositoriodevalidacoes.php";
+include "adicionais/php/php_conversaostatus.php";
+include "adicionais/php/php_repositoriodemensagens.php";
+include "adicionais/php/php_repositoriodevalidacoes.php";
 include "adicionais/php/php_validacoes.php";
 include "adicionais/php/php_conversaovalor.php";
 
@@ -22,7 +22,7 @@ include "adicionais/php/php_conversaovalor.php";
         <!-- CSS -->
         <link rel="stylesheet" href="layout/css/css_reset.min.css">
         <link rel="stylesheet" href="adicionais/plugins/fullcalendar/fullcalendar.min.css">
-        <link rel="stylesheet" href="adicionais\plugins\modal\modal.min.css">
+        <link rel="stylesheet" href="adicionais/plugins/modal/modal.min.css">
         <link rel="stylesheet" href="layout/css/css_estilo.min.css">
         <link rel="stylesheet" href="layout/css/datepicker.min.css">
     </head>
@@ -88,7 +88,7 @@ include "adicionais/php/php_conversaovalor.php";
               </div>
         	</div> <!-- Fim .menu -->
           <div class="calendario">
-              <a href="sistema\calendario\modal\calendario.php" rel="modal:open"><button class="calendario-img"></button></a>
+              <a href="sistema/calendario/modal/calendario.php" rel="modal:open"><button class="calendario-img"></button></a>
           </div>
           <!-- Conteúdo principal -->
           <?php
@@ -112,18 +112,18 @@ if (isset($_GET['pas']) && isset($_GET['arq'])) {
           </div>
     </body>
     <!-- Scripts -->
-    <script src="adicionais\plugins\jquery\jquery-min.js"></script>
-    <script src="adicionais\plugins\modal\highlight.pack.js"></script>
-    <script src="adicionais\js\js_upload-submit.js"></script>
-    <script src="adicionais\plugins\fullcalendar\moment.min.js"></script>
-    <script src="adicionais\plugins\modal\modal.min.js"></script>
-    <script src="adicionais\plugins\mask\jquery.maskedinput.js"></script>
+    <script src="adicionais/plugins/jquery/jquery-min.js"></script>
+    <script src="adicionais/plugins/modal/highlight.pack.js"></script>
+    <script src="adicionais/js/js_upload-submit.js"></script>
+    <script src="adicionais/plugins/fullcalendar/moment.min.js"></script>
+    <script src="adicionais/plugins/modal/modal.min.js"></script>
+    <script src="adicionais/plugins/mask/jquery.maskedinput.js"></script>
     <script src="adicionais/plugins/fullcalendar/fullcalendar.min.js"></script>
     <script src="adicionais/plugins/fullcalendar/fullcalenda-pt-br.js"></script>
-    <script src="adicionais\js\js_calendariopersonalizado.js"></script>
-    <script src="adicionais\js\js_trlink.js"></script>
-    <script src="adicionais\js\js_removeraviso.js"></script>
-    <script src="adicionais\js\js_maskauxiliar.js"></script>
+    <script src="adicionais/js/js_calendariopersonalizado.js"></script>
+    <script src="adicionais/js/js_trlink.js"></script>
+    <script src="adicionais/js/js_removeraviso.js"></script>
+    <script src="adicionais/js/js_maskauxiliar.js"></script>
     <script src="adicionais/pluginsjs/datepickerpersonalizado.js"></script>
     <script src="adicionais/plugins/datepicker/datepicker.min.js"></script>
     <script src="adicionais/plugins/datepicker/datepicker.pt-br.js"></script>

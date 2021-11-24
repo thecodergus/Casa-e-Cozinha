@@ -11,14 +11,16 @@ Software construido com base em:
 - Javascript
 - CSS
 
-## Para montar o ambiente via docker:
+## Montado o ambiente via docker:
 ```
 docker-compose up -d
 ```
 
-Acessar [127.0.0.0.1](http://127.0.0.1/)
+## Iniciando:
 
-## Login:
+1. Acesse [127.0.0.0.1](http://127.0.0.1/)
+2. Digite o Login:
+
 Usuario: admin
 
 Senha: admin

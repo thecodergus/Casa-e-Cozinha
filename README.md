@@ -16,6 +16,8 @@ Software construido com base em:
 docker-compose up -d
 ```
 
+## Acessar [127.0.0.0.1](http://127.0.0.1/)
+
 ## Login:
 Usuario: admin
 

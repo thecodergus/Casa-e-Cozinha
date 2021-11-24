@@ -21,6 +21,5 @@ docker-compose up -d
 1. Acesse [127.0.0.0.1](http://127.0.0.1/)
 2. Digite o Login:
 
-2.1 Usuario: admin
-
-2.2 Senha: admin
+Usuario: admin
+Senha: admin
